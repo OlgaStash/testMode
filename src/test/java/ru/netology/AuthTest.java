@@ -1,10 +1,7 @@
 package ru.netology;
 
-import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import ru.netology.util.DataGenerator;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
@@ -64,7 +61,7 @@ public class AuthTest {
         $(".notification_status_error").shouldBe(appear).shouldHave(text("Ошибка! Неверно указан логин или пароль"));
     }
 
-//    Зарегистированный заблокированный пользователь
+    //    Зарегистированный заблокированный пользователь
     @Test
     public void shouldCheckBlockedUser() {
         var blockedUser = getRegisteredUser("blocked");
